@@ -1,0 +1,420 @@
+/* ------------------------------------------------------------------------
+* Base Styles
+* ------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+// Clear
+.clear:before,
+.clear:after {
+  content: ' ';
+  display: table;
+}
+
+.clear:after {
+  clear: both;
+}
+
+.clear {
+  *zoom: 1;
+}
+
+::selection {
+  background: $rh_primary_color;
+  color: #fff;
+}
+
+// html element 62.5% font-size for REM use
+html {
+  font-size: 62.5%;
+  height:100%;
+  min-height:100%;
+}
+
+body {
+  min-height:100%;
+  margin: 0;
+  font-family: $rubikFontFamily;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  background: $rh_body_bg;
+  color: #444;
+}
+
+// Typesetting variables. Edit these!
+$baseFontSize: 14; // in pixels. This would result in 22px on desktop
+$baseLineHeight: 2; // how large the line height is as a multiple of font size
+$leading: $baseLineHeight * 1rem;
+// Rate of growth for headings
+// I actually like this to be slightly smaller then the leading. Makes for tight headings.
+$scale: 1.8;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* Change heading typefaces here */
+  font-family: $rubikFontFamily;
+  font-weight: 700;
+  margin-top: $leading;
+  margin-bottom: 0;
+  line-height: 1.2;
+  color: $rh_heading_color;
+}
+
+h1 {
+  font-size: 3 * $scale * 1rem;
+  margin-top: 2 * $leading;
+}
+
+h2 {
+  font-size: 2 * $scale * 1rem;
+  margin-top: 2 * $leading;
+}
+
+h3 {
+  font-size: 1 * $scale * 1rem;
+}
+
+h4 {
+  font-size: $scale / 1.1 * 1rem;
+}
+
+h5 {
+  font-size: $scale / 1.3 * 1rem;
+}
+
+h6 {
+  font-size: $scale / 1.5 * 1rem;
+}
+
+p{
+  color: $rh_text_color;
+}
+
+a {
+  color: #444;
+  text-decoration: none;
+
+  &:hover {
+    color: #ea723d;
+  }
+}
+
+a:hover,
+a:focus,
+a:active {
+  outline: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+span {
+  font-size: inherit;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+dl,
+ol,
+ul,
+table,
+pre,
+figure,
+legend,
+input,
+textarea,
+button,
+label,
+select {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+select{
+  width: 100%;
+}
+
+input,
+textarea {
+  padding: 0.5rem;
+  outline: 0;
+  box-shadow: none;
+}
+
+button {
+  box-shadow: none;
+  background: $rh_btn_bg;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  outline: 0;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+blockquote {
+  background-color: rgba($rh_primary_color, 0.1);
+  border-color: $rh_primary_color;
+  font-size: 1.5rem;
+  border-left: 5px solid $rh_primary_color;
+}
+
+table {
+  width: 100%;
+  margin-bottom: 2rem;
+  table-layout: fixed;
+}
+
+table,
+th,
+td {
+  border: 1px solid rgba($rh_text_color, 0.2);
+  border-collapse: collapse;
+}
+
+th {
+  color: $rh_heading_color;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 0.5rem 0.7rem;
+}
+
+td {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  padding: 0.5rem 0.7rem;
+}
+
+dl {
+  margin-bottom: 2rem;
+
+  dt {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: $rh_heading_color;
+  }
+
+  dd {
+    font-size: 1.5rem;
+    line-height: 2;
+    margin-bottom: 1.5rem;
+  }
+}
+
+address {
+  margin-bottom: 2rem;
+}
+
+pre {
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.rh_wrap {
+  position: relative;
+  z-index: 0;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.rh_wrap--padding {
+  padding: 0 2rem;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  @include r(480) {
+    padding: 0 3rem;
+  }
+  @include r(768) {
+    padding: 0 5rem;
+  }
+  @include r(1140) {
+    padding: 0 7rem;
+  }
+  @include r(1280) {
+    padding: 0 10rem;
+  }
+}
+
+.rh_wrap--topPadding {
+  padding-top: 2rem;
+
+  @include r(480) {
+    padding-top: 3rem;
+  }
+  @include r(768) {
+    padding-top: 5rem;
+  }
+  @include r(1140) {
+    padding-top: 6rem;
+  }
+}
+
+.REAL_HOMES_page_top_bottom_padding_nil{
+  .rh_wrap--topPadding{
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .rh_page{
+    padding-bottom: 0;
+  }
+}
+
+.clearfix {
+  @include clearfix();
+}
+
+.rh_svg {
+  fill: #1ea69a;
+}
+
+.hide {
+  display: none;
+}
+
+.highlight {
+  svg {
+    path {
+      fill: $rh_secondary_color;
+    }
+  }
+}
+
+.highlight__red {
+  cursor: pointer;
+  svg {
+    path {
+      fill: #ea3d3d;
+    }
+  }
+}
+
+.only-for-print {
+  display: none;
+}
+
+.rh_sidebar .ere_widget_contact_form p > label:not([for^="inspiry-gdpr"]),
+.rh_inspiry_gdpr .gdpr-checkbox-label {
+  color: #1a1a1a;
+}
+
+.rh_inspiry_gdpr{
+  width: 100%;
+  display: block;
+  margin-bottom: 1.5rem;
+
+  &.rh_agent_form__field {
+    margin-bottom: 3rem;
+  }
+
+  .gdpr-checkbox-label {
+    display: block;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+  }
+
+
+  input {
+    float: left;
+  }
+
+  input {
+    width: auto;
+    margin: 4px 0 0;
+  }
+
+  label {
+    width: calc( 100% - 25px );
+    display: inline-block;
+    margin-left: 8px;
+    margin-bottom: 0 !important;
+    line-height: 1.4;
+    color: inherit;
+    float: right;
+  }
+}
+
+.property-thumbnail-gradient{
+
+  &:after{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    min-height: 70px;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.65) 100%);
+  }
+}
+
+.rh_grid_size{
+  margin: auto;
+  padding: 0 10rem;
+  width: 100%;
+  max-width: calc(1240px + 20rem);
+  @include r(1024) {
+    padding: 0 5rem;
+  }
+  @include r(1140) {
+    padding: 0 7rem;
+  }
+  @include r(1280) {
+    padding: 0 10rem;
+  }
+}
+
+.realhomes-content-fullwidth{
+
+  .rh_page__main {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.rh_apply_sticky_wrapper_footer{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.inspiry-term-description {
+  margin-bottom: 4.5rem;
+  text-align: left;
+  line-height: 1.6;
+
+  p {
+    margin-bottom: 2rem;
+  }
+}
+
+.rtl .inspiry-term-description {
+  text-align: right;
+}

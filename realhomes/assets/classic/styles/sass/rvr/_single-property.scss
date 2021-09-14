@@ -1,0 +1,47 @@
+
+// outdoor features & optional services
+.nolink-list {
+  ul {
+    li {
+      color: #636464;
+      padding: 7px 2px 7px 25px;
+    }
+  }
+}
+
+// optional services
+.rvr-inc-exc {
+  h5 {
+    margin: 1rem;
+  }
+}
+
+// property policies
+.rvr-property-policies {
+  padding: 1rem;
+  border-bottom: 1px solid #dedede;
+
+  ul.additional-details {
+    li:last-child {
+      border-bottom: 0 !important;
+    }
+  }
+}
+
+// location surroundings
+.rvr-location-surrounding {
+  padding: 1rem;
+  border-bottom: 1px solid #dedede;
+
+  ul.additional-details {
+    border: 0 !important;
+    li {
+      h6 {
+        margin: 0;
+      }
+      &:last-child {
+        border-bottom: 0 !important;
+      }
+    }
+  }
+}

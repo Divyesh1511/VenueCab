@@ -1,0 +1,220 @@
+.admin-bar {
+  .rh_mod_sticky_header {
+    top: 32px;
+  }
+}
+
+.rh_sticky_header_container {
+  display: none;
+  @include r(1140) {
+    display: block;
+  }
+}
+
+.rh_mod_sticky_header {
+  display: none;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(#373737, .95);
+  z-index: 9999999;
+  -webkit-box-shadow: 3px 5px 72px -20px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 5px 72px -20px rgba(0, 0, 0, 0.75);
+  box-shadow: 3px 5px 72px -20px rgba(0, 0, 0, 0.75);
+
+  @include r(1500) {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  .sticky_header_box {
+    display: flex;
+  }
+
+  .header_logo {
+    margin-right: 3rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    min-width: 90px;
+    @include r(1500) {
+      margin-right: 5rem;
+    }
+    img {
+      max-height: 50px;
+    }
+  }
+
+  .main-menu {
+    display: flex;
+    flex: auto;
+    .menu-main-menu-container {
+      display: flex;
+      > ul {
+        display: flex;
+        li {
+          display: flex;
+         > a {
+            color: #ffffff;
+            display: flex;
+            padding-left: 10px;
+            padding-right: 10px;
+            align-items: center;
+            transition: .2s all;
+            @include r(1280) {
+              padding-left: 15px;
+              padding-right: 15px;
+            }
+
+          }
+          &:hover {
+            a {
+              background: #ffffff;
+              color: #444;
+            }
+          }
+          &.current-menu-ancestor{
+            a {
+              background: #ffffff;
+              color: #444;
+            }
+          }
+        }
+        .current-menu-item {
+          a {
+            background: #ffffff;
+            color: #444;
+          }
+        }
+      }
+      li {
+        display: inline-block;
+        color: #ffffff;
+        position: relative;
+        a {
+          display: inline-block;
+
+          //padding: 20px 10px;
+        }
+        &:hover {
+          > ul {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+        > ul{
+          > li{
+            &.current-menu-ancestor{
+             > a{
+                background: #f7f7f7;
+              }
+            }
+          }
+        }
+
+        ul {
+          display: block;
+          position: absolute;
+          top: 100%;
+
+          opacity: 0;
+          visibility: hidden;
+          -webkit-transition: .2s all ease-in-out;
+          transition: .2s all ease-in-out;
+          border-top: 3px solid #ea723d;
+          padding: 2rem 0;
+          min-width: 230px;
+          z-index: 999999;
+          background: #ffffff;
+
+
+          li {
+            display: block;
+            a {
+              display: block;
+              white-space: nowrap;
+              padding: 1rem 2.5rem;
+              line-height: 2.4rem
+            }
+            &:hover{
+              > a{
+                background: #f7f7f7;
+              }
+            }
+            ul{
+              left: 100%;
+              top: 0;
+            }
+            &.current-menu-item{
+              a{
+                background: #f7f7f7;
+              }
+            }
+
+          }
+        }
+      }
+
+    }
+  }
+  .submit_property {
+    align-self: center;
+    display: flex;
+    align-items: center;
+    svg {
+      fill: #ffffff;
+      margin-right: 3px;
+    }
+    a {
+      color: #ffffff;
+      vertical-align: middle;
+    }
+    .rh_menu__user_phone, .rh_menu__user_email {
+      padding-left: 10px;
+      padding-right: 10px;
+      transition: .2s all;
+      &:hover{
+        opacity: .7;
+      }
+    }
+    .rh_menu__user_email {
+      display: none;
+      @include r(1280) {
+        display: block;
+      }
+    }
+    .rh_menu__user_phone {
+      display: none;
+      @include r(1140) {
+        display: block;
+      }
+    }
+  }
+  .rh_menu__user_submit {
+    margin-left: 10px;
+    transition: .2s all ease-in-out;
+
+    a {
+      border: 2px solid #ffffff;
+
+      display: inline-block;
+      color: #ffffff;
+      padding: 10px 20px;
+      font-weight: 500;
+      transition: .2s all;
+
+      &:hover {
+        background: #ffffff;
+        color: #444444;
+      }
+
+    }
+  }
+  .rh_logo__heading{
+    margin-top: 0;
+    a{
+      transition: .2s all ease-in-out;
+      color: #ffffff;
+    }
+  }
+}

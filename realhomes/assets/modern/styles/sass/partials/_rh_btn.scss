@@ -1,0 +1,105 @@
+/**
+ * Theme Button Styles
+ */
+
+.rh_btn {
+	display: inline-block;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    outline: 0;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+	transition: all .2s ease-in-out;
+    &:hover {
+    	color: #fff;
+    }
+}
+
+.rh_btn--secondary {
+	background: $rh_btn_secondary;
+	transition: 0.2s background linear;
+
+	&:hover {
+		background: rgba($rh_btn_secondary, 0.8);
+		transition: 0.2s background linear;
+	}
+}
+
+.rh_btn--greyBG {
+	background: rgba(#fff, 0.25);
+	transition: 0.2s background linear;
+
+	&:hover {
+		background: rgba(#fff, 0.4);
+		transition: 0.2s background linear;
+	}
+}
+
+.rh_btn--greybtn {
+	background: #aeadad;
+	transition: 0.2s background linear;
+
+	&:hover {
+		background: #838181;
+		transition: 0.2s background linear;
+	}
+}
+
+.rh_btn--blackBG {
+	background: $rh_btn_black;
+	transition: 0.2s background linear;
+
+	&:hover {
+		background: rgba($rh_btn_black, 0.8);
+		transition: 0.2s background linear;
+	}
+}
+
+.rh_btn--whiteBG {
+	background: #fff;
+	color: $rh_btn_black;
+	transition: 0.2s background linear;
+
+	&:hover {
+		background: rgba(#fff, 0.8);
+		color: $rh_btn_black;
+		transition: 0.2s background linear;
+	}
+}
+
+.rh_btn--profileDelete {
+	background: #cccccc;
+	transition: 0.2s background linear;
+
+	&:hover {
+		background: darken(#cccccc, 5%);
+		transition: 0.2s background linear;
+	}
+}
+
+.rh_btn--primary {
+	background: $rh_primary_color;
+	transition: 0.2s background linear;
+
+	&:hover {
+		background: darken($rh_primary_color, 5%);
+		transition: 0.2s background linear;
+	}
+}
+
+.btn-mini {
+	font-size: 1.3rem;
+}
+
+.btn-small {
+	padding: 1.5rem 2.5rem;
+}
+
+.btn-large {
+	font-size: 1.8rem;
+	font-weight: 500;
+	padding: 1.5rem 3rem;
+}

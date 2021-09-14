@@ -1,0 +1,282 @@
+/**
+ * Footer Template
+ */
+.rh_footer {
+	z-index: 5;
+	display: block;
+	position: relative;
+	padding: 5rem 0 10rem 0;
+	background: $rh_footer_bg;
+	color: #808080;
+
+	@include r(320)  { padding: 5rem 0 3rem; }
+	@include r(768)  { padding: 5rem 0; }
+	@include r(1024) { padding: 14rem 0 5rem 0; }
+	@include r(1140) { padding: 15rem 0 7rem 0; }
+	@include r(1280) { padding-bottom: 10rem; }
+
+	&.diagonal-border:before {
+		content: '';
+	    width: 0;
+	    height: 0;
+	    border: 0 solid transparent;
+	    border-top-width: 180px;
+		border-bottom-width: 0px;
+	    border-right: 1440px solid $rh_footer_bg;
+	    border-right: 100vw solid $rh_footer_bg;
+	    position: absolute;
+	    top: -90px;
+	    left: 0;
+	    z-index: 9999;
+
+	    @include r(320)  { border-right-width: 0; border-top-width: 0; }
+		@include r(480)  { border-right-width: 0; border-top-width: 0; }
+		@include r(768)  { border-right-width: 0; border-top-width: 0; }
+		@include r(1024) { top: -70px; border-right-width: 100vw; border-top-width: 140px; }
+		@include r(1140) { top: -80px; border-right-width: 100vw; border-top-width: 160px; }
+		@include r(1280) { top: -90px; border-right-width: 100vw; border-top-width: 180px; }
+	}
+
+	a {
+		color: #999;
+		transition: 0.2s color linear;
+
+		&:hover {
+			color: #fff;
+		}
+	}
+
+	.no-results{
+		color: inherit;
+	}
+
+	.rh_footer--alignCenter {
+		align-items: center;
+	}
+
+	.rh_footer--alignTop {
+		align-items: flex-start;
+	}
+
+	.rh_footer__wrap {
+		display: flex;
+		flex-wrap: wrap;
+		max-width: 1440px;
+		margin: 0 auto;
+		padding: 0 8rem 0;
+
+		@include r(320)  { padding: 0 2rem 0; }
+		@include r(480)  { padding: 0 3rem 0; }
+		@include r(1140) { padding: 0 5rem 0; }
+		@include r(1280) { padding: 0 8rem 0; }
+
+		.copyrights {
+			display: inline-block;
+			margin: 0;
+			font-size: 1.5rem;
+			line-height: 2;
+			text-align: left;
+			padding: 0 2rem;
+
+			@include r(320)  { padding: 0 0 2rem 0; }
+			@include r(768)  { padding: 0 2rem; }
+
+			.separator {
+				display: inline-block;
+
+				@include r(320)  { margin: 0 0.5rem; }
+				@include r(480)  { margin: 0 1rem; }
+				@include r(768)  { margin: 0 1.5rem; }
+			}
+
+			a {
+				font-size: 1.5rem;
+
+				&:hover {
+					color: #fff;
+				}
+			}
+		}
+
+		.designed-by {
+			display: inline-block;
+			margin: 0;
+			font-size: 1.5rem;
+			line-height: 2;
+			padding: 0 2rem;
+
+			@include r(320)  { padding: 0 0 2rem 0; }
+			@include r(768)  { padding: 0 2rem; }
+		}
+	}
+
+	.rh_footer--paddingBottom {
+		padding-bottom: 5rem;
+
+		@include r(320)  { padding-bottom: 2rem; }
+		@include r(768)  { padding-bottom: 3rem; }
+		@include r(1024) { padding-bottom: 5rem; }
+	}
+
+	.rh_footer__logo {
+		display: flex;
+		width: 50%;
+		justify-content: flex-start;
+		align-items: center;
+		padding: 0 0 0 2rem;
+
+		@include r(320)  { width: 100%; flex-direction: column; justify-content: center; padding: 0 0 3rem 0; }
+		@include r(480)  { width: 100%; flex-direction: row; justify-content: center; padding: 0 0 3rem 0; }
+		@include r(768)  { width: 100%; flex-direction: row; justify-content: center; padding: 0 2rem 2rem 2rem; }
+		@include r(1024) { width: 50%; flex-direction: row; justify-content: flex-start; padding: 0 0 0 2rem; }
+
+		.rh_footer__heading {
+			font-size: 1.4rem;
+			margin: 0;
+
+			a {
+				display: block;
+				font-size: 1.8rem;
+				line-height: 1.8rem;
+				font-weight: 500;
+				color: #fff;
+				transition: 0.2s all linear;
+
+				&:hover {
+					color: darken(#fff, 20%);
+				}
+			}
+		}
+
+		img {
+			margin-right: 1.5rem;
+
+			@include r(320)  { margin-bottom: 1rem; margin-right: 0; }
+			@include r(480)  { margin-bottom: 0; margin-right: 1.5rem; }
+		}
+
+		.tag-line {
+			font-size: 1.4rem;
+		}
+	}
+
+	.rh_footer__social {
+		width: 50%;
+		text-align: right;
+		padding: 0 2rem 0 0;
+
+		@include r(320)  { width: 100%; text-align: center; padding: 0; }
+		@include r(768)  { width: 100%; text-align: center; padding: 0 2rem 2rem; }
+		@include r(1024) { width: 50%; text-align: right; padding: 0 2rem 0 0; }
+
+
+		a {
+			display: inline-block;
+			margin-left: 1rem;
+
+			@include r(320)  { margin: 0 1.5rem; margin-bottom: 1.5rem; }
+			@include r(768)  { margin: 0; margin-left: 1rem; }
+		}
+	}
+}
+
+.rh_footer__before_fix {
+	z-index: 99999;
+
+	@include r(320)  { padding: 5rem 0 3rem; }
+	@include r(768)  { padding: 5rem 0; }
+	@include r(1140) { padding: 5rem 0 7rem 0; }
+	@include r(1280) { padding: 5rem 0 10rem 0; }
+
+	&:before {
+		@include r(320)  { top: -180px; }
+		@include r(1024) { top: -140px; }
+		@include r(1140) { top: -160px; }
+		@include r(1280) { top: -180px; }
+	}
+}
+
+.rh_footer--space_between {
+	justify-content: space-between;
+}
+
+.separator {
+	display: none;
+	font-size: 1.4rem;
+	margin: 0 1.5rem;
+
+	@include r(480)  { display: inline-block; }
+}
+
+.rh_footer__widgets {
+	flex: 0 1 auto;
+	width: 100%;
+	padding: 0;
+
+	@include r(max767)  {
+		text-align: center;
+
+		.rh_contact_widget .rh_contact_widget__item {
+			display: block;
+			width: 100%;
+			text-align: center;
+		}
+
+		.rh_contact_widget .rh_contact_widget__item .content {
+			max-width: initial;
+		}
+	}
+
+	@include r(768)  { width: 50%; padding: 0 2rem; }
+	@include r(1024) { width: 33.3%;  }
+
+	&.column-1 {
+		@include r(768)  { width: 100%; }
+	}
+
+	&.columns-2 {
+		@include r(1024) { width: 50%; }
+	}
+
+	&.columns-4 {
+		@include r(1024) { width: 25%; }
+	}
+
+	.widget_mc4wp_form_widget {
+		margin-bottom: 0;
+	}
+}
+.rh_footer{
+	&.diagonal-border-footer{
+		position: relative;
+		z-index: 1;
+		margin-top: -30rem;
+		padding-top: 30rem;
+	}
+}
+
+#scroll-top {
+  display: none;
+  position: fixed;
+  bottom: 40px;
+  z-index: 999;
+  height: 42px;
+  width: 42px;
+  line-height: 42px;
+  text-align: center;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  background-color: #1ea69a;
+  color: #fff;
+  border: 1px solid #ffffff;
+  //0px 0px 6px 1px rgba(255,255, 255, 0.5);
+  &:hover {
+    background: #1c9d92;
+  }
+  &.stp_right {
+    right: 30px;
+  }
+  &.stp_left {
+    left: 30px;
+  }
+}

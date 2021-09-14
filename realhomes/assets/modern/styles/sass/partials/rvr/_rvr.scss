@@ -1,0 +1,46 @@
+
+@import "single-property";
+@import "availability-calendar";
+@import "widgets";
+
+/**
+* Advance Search Form & Booking Form Calendar
+*/
+#ui-datepicker-div {
+  width: 24.9rem;
+  margin-left: -1px;
+
+  .ui-datepicker-header {
+    background-color: $rh_primary_color;
+
+    .ui-datepicker-title {
+      font-size: 1.4rem;
+    }
+  }
+
+  .ui-datepicker-calendar {
+    thead {
+      tr {
+        th {
+          font-size: 1.4rem;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td.ui-datepicker-today,
+        td.ui-datepicker-current-day {
+          background-color: $rh_primary_color;
+        }
+
+        td.ui-state-disabled {
+          background-color: #dedede;
+        }
+
+        td.ui-state-reserved {
+          background-color: $rh_secondary_color !important;
+        }
+      }
+    }
+  }
+}

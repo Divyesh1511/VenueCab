@@ -1,0 +1,782 @@
+@mixin r($point) {
+  @if $point==240 {
+    @media (min-width: 240px) {
+      @content;
+    }
+  }
+  @if $point==320 {
+    @media (min-width: 320px) {
+      @content;
+    }
+  }
+  @if $point==480 {
+    @media (min-width: 480px) {
+      @content;
+    }
+  }
+  @if $point==600 {
+    @media (min-width: 600px) {
+      @content;
+    }
+  }
+  @if $point==768 {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+  @if $point==1024 {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  }
+  @if $point==1140 {
+    @media (min-width: 1140px) {
+      @content;
+    }
+  }
+  @if $point==1280 {
+    @media (min-width: 1280px) {
+      @content;
+    }
+  }
+  @if $point==1340 {
+    @media (min-width: 1340px) {
+      @content;
+    }
+  }
+  @if $point==1400 {
+    @media (min-width: 1400px) {
+      @content;
+    }
+  }
+  @if $point==1500 {
+    @media (min-width: 1500px) {
+      @content;
+    }
+  }
+  @if $point==1700 {
+    @media (min-width: 1700px) {
+      @content;
+    }
+  }
+  @if $point == max1139 {
+    @media (max-width: 1139px) {
+      @content;
+    }
+  }
+  @if $point == max1023 {
+    @media (max-width: 1023px) {
+      @content;
+    }
+  }
+  @if $point == max890 {
+    @media (max-width: 890px) {
+      @content;
+    }
+  }
+  @if $point == max767 {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+  @if $point == max558 {
+    @media (max-width: 558px) {
+      @content;
+    }
+  }
+  @if $point == max479 {
+    @media (max-width: 479px) {
+      @content;
+    }
+  }
+}
+
+.rh_wrapper_floating_features {
+  position: fixed;
+  right: 0;
+  top: 150px;
+  z-index: 999999999;
+  //display: flex;
+  //flex-direction: column;
+  //box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.05);
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    z-index: 99999999999;
+    background-color: #ffffff;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    //box-shadow: inset 0 0 5px ;
+    border-radius: 0;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background-color: #e0e0e0;
+    border-radius: 0;
+  }
+}
+
+
+@import "currency-switcher";
+@import "wpml-language-switcher";
+@import "compare-properties";
+
+
+@media (max-width: 890px) {
+  .rh_wrapper_floating_features {
+    right: auto;
+    top: auto;
+    bottom: 0;
+    background: #000000;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .rh_wrapper_currency_switcher, .rh_wrapper_properties_compare, .rh_wrapper_language_switcher {
+    right: 0;
+    margin-bottom: 0;
+  }
+  .rh_wrapper_properties_compare {
+    display: none;
+
+    &.rh_has_compare_children {
+      display: block;
+    }
+  }
+  .rh_floating_compare_button:after {
+    top: 10px;
+    right: 5px;
+    transform: rotate(180deg);
+  }
+  .inspiry-language-switcher > ul > li:after {
+    top: 10px;
+    transform: rotate(180deg);
+  }
+  .inspiry-language-switcher > ul > li > ul {
+    top: auto;
+    bottom: 100%;
+  }
+  #currency-switcher #selected-currency:after {
+    transform: rotate(180deg);
+  }
+  #currency-switcher-list {
+    top: auto;
+    bottom: 100%;
+  }
+  .rh_fixed_side_bar_compare {
+    position: fixed;
+    top: auto;
+    bottom: 42px;
+    width: 100%;
+    left: 0;
+    right: auto;
+  }
+  .rh_compare__slide_img .rh_compare_img_inner {
+    width: 100px;
+  }
+  .rtl {
+    .rh_fixed_side_bar_compare {
+      right: auto;
+      left: 0;
+    }
+  }
+  .inspiry_body_floating_features_show {
+    #footer-wrapper {
+      margin-bottom: 42px;
+    }
+  }
+  .inspiry_body_floating_features_hide {
+    .rh_wrapper_floating_features {
+      display: none;
+    }
+  }
+
+}
+
+@media (max-width: 667px) {
+  .rh_compare__slide_img .rh_compare_img_inner {
+    width: 70px;
+  }
+  .rh_wrapper_floating_features {
+    z-index: 9999999999;
+  }
+}
+
+/**
+* Open Street Map - Cluster styles.
+ */
+.leaflet-cluster-anim .leaflet-marker-icon, .leaflet-cluster-anim .leaflet-marker-shadow {
+  -webkit-transition: -webkit-transform 0.3s ease-out, opacity 0.3s ease-in;
+  -moz-transition: -moz-transform 0.3s ease-out, opacity 0.3s ease-in;
+  -o-transition: -o-transform 0.3s ease-out, opacity 0.3s ease-in;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-in;
+}
+
+.leaflet-cluster-spider-leg {
+  /* stroke-dashoffset (duration and function) should match with leaflet-marker-icon transform in order to track it exactly */
+  -webkit-transition: -webkit-stroke-dashoffset 0.3s ease-out, -webkit-stroke-opacity 0.3s ease-in;
+  -moz-transition: -moz-stroke-dashoffset 0.3s ease-out, -moz-stroke-opacity 0.3s ease-in;
+  -o-transition: -o-stroke-dashoffset 0.3s ease-out, -o-stroke-opacity 0.3s ease-in;
+  transition: stroke-dashoffset 0.3s ease-out, stroke-opacity 0.3s ease-in;
+}
+
+.marker-cluster-small {
+  background-color: rgba(30, 166, 154, 0.5);
+  color: #fff;
+}
+
+.marker-cluster-small div {
+  background-color: rgba(24, 153, 142, 1);
+}
+
+.marker-cluster-medium {
+  background-color: rgba(234, 114, 61, 0.6);
+  color: #fff;
+}
+
+.marker-cluster-medium div {
+  background-color: rgba(234, 114, 61, 1);
+}
+
+.marker-cluster-large {
+  background-color: rgba(253, 156, 115, 0.6);
+  color: #fff;
+}
+
+.marker-cluster-large div {
+  background-color: rgba(241, 128, 23, 0.6);
+}
+
+/* IE 6-8 fallback colors */
+.leaflet-oldie .marker-cluster-small {
+  background-color: rgb(15, 153, 130);
+  color: #fff;
+}
+
+.leaflet-oldie .marker-cluster-small div {
+  background-color: rgb(24, 153, 142);
+}
+
+.leaflet-oldie .marker-cluster-medium {
+  background-color: rgb(241, 211, 87);
+  color: #fff;
+}
+
+.leaflet-oldie .marker-cluster-medium div {
+  background-color: rgb(240, 194, 12);
+}
+
+.leaflet-oldie .marker-cluster-large {
+  background-color: rgb(253, 156, 115);
+  color: #fff;
+}
+
+.leaflet-oldie .marker-cluster-large div {
+  background-color: rgb(241, 128, 23);
+}
+
+.marker-cluster {
+  background-clip: padding-box;
+  border-radius: 20px;
+}
+
+.marker-cluster div {
+  width: 30px;
+  height: 30px;
+  margin-left: 5px;
+  margin-top: 5px;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.marker-cluster span {
+  line-height: 30px;
+}
+
+/*
+* Google reCaptcha V3 styles
+*/
+.grecaptcha-badge {
+  bottom: 130px !important;
+  z-index: 9999;
+}
+
+.design_classic.single-property {
+  .g-recaptcha-type-v3 {
+    margin-bottom: 0;
+  }
+}
+
+.design_classic {
+  .marker-cluster-small {
+    background-color: rgba(89, 186, 227, 0.5);
+
+    div {
+      background-color: #59bae3;
+    }
+  }
+}
+
+@import "login-modal";
+
+/*
+* Sub properties list table style on property detail page
+*/
+.sub-properties-table-container {
+  overflow-x: auto;
+
+  @media(max-width: 767px) {
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+  }
+}
+
+.sub-properties-list-table {
+  margin-bottom: 0;
+  text-align: center;
+  table-layout: auto;
+  background-color: #ffffff;
+
+  th {
+    font-size: 14px;
+    background-color: #f7f7f7;
+  }
+
+  th,
+  td {
+    padding: 10px 8px;
+  }
+
+  td {
+    font-size: 13px;
+  }
+
+  strong {
+    font-weight: 500;
+  }
+
+  .sub-property-title {
+    width: 150px;
+  }
+
+  .sub-property-beds {
+    width: 60px;
+  }
+
+  .sub-property-baths {
+    width: 60px;
+  }
+}
+
+#overview .sub-properties-list-table {
+  margin-bottom: 30px;
+}
+
+.rh_vox_overlay {
+  z-index: 999999999;
+}
+
+// Agents list page sort control styles.
+.rh_page__head-agents-list-template {
+  padding-bottom: 0;
+
+  .rh_page__controls .rh_sort_controls .select2-selection--single {
+    width: 28rem;
+  }
+}
+
+.vbox-overlay {
+  z-index: 999999999;
+}
+
+
+@import "realhomes-social-login";
+
+@import "bootstrap_select";
+
+.inspiry_rating_margin_bottom {
+  .inspiry_stars_avg_rating {
+    margin-bottom: 10px;
+  }
+}
+
+.inspiry_stars_avg_rating {
+  position: relative;
+  cursor: pointer;
+
+  .rvr_rating_down {
+    vertical-align: middle;
+    font-size: 12px;
+    margin-left: 3px;
+    margin-right: 3px;
+  }
+
+  .inspiry_wrapper_rating_info {
+    position: absolute;
+    z-index: 99999999;
+    width: 320px;
+    background: #ffffff;
+    padding: 20px;
+    border: 1px solid #eeeeee;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(.9);
+    transition: all .2s ease-in-out;
+    margin-top: 7px;
+    transition-delay: .2s;
+    top: 100%;
+
+    &:after {
+      position: absolute;
+      top: -7px;
+      content: '';
+      width: 14px;
+      height: 14px;
+      background: #ffffff;
+      transform: rotate(45deg);
+      border: 1px solid #eeeeee;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+    }
+
+    //&.left{
+    //  transform-origin: left top;
+    //  &:after{
+    //    left: 14px;
+    //  }
+    //}
+    //&.right{
+    //  transform-origin: right top;
+    //  right: 0;
+    //  &:after{
+    //    right: 14px;
+    //  }
+    //}
+  }
+
+  &:hover {
+    .inspiry_wrapper_rating_info {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+      transition-delay: 0s;
+    }
+  }
+
+  .inspiry_rating_percentage {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    span {
+      display: block;
+    }
+
+    .inspiry_rating_sorting_label {
+      width: 100px;
+      color: #1a1a1a;
+      margin-right: 5px;
+      text-align: initial;
+    }
+
+    .inspiry_rating_line {
+      display: block;
+      height: 5px;
+      width: 100%;
+      position: relative;
+      background: #eeeeee;
+
+      .inspiry_rating_line_inner {
+        height: 5px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: #ea723d;
+      }
+    }
+
+    .inspiry_rating_text {
+      width: 100px;
+      text-align: center;
+      padding-left: 15px;
+
+    }
+
+    .inspiry_rating_text_inner {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      border: 1px solid #eeeeee;
+      color: #1a1a1a;
+    }
+  }
+}
+
+.inspiry_rating_right {
+  .inspiry_stars_avg_rating .inspiry_wrapper_rating_info {
+    transform-origin: right top;
+    right: 0;
+
+    &:after {
+      right: 14px;
+    }
+  }
+}
+
+.inspiry_rating_left {
+  .inspiry_stars_avg_rating .inspiry_wrapper_rating_info {
+    transform-origin: left top;
+    left: 0;
+
+    &:after {
+      left: 14px;
+    }
+  }
+}
+
+.rtl {
+  .inspiry_rating_right {
+    .inspiry_stars_avg_rating {
+      .inspiry_wrapper_rating_info {
+        transform-origin: left top;
+        left: 0;
+        right: auto;
+
+        &:after {
+          left: 14px;
+          right: auto;
+        }
+      }
+
+      .inspiry_rating_percentage .inspiry_rating_line .inspiry_rating_line_inner {
+        left: auto;
+        right: 0;
+      }
+    }
+  }
+
+  .inspiry_rating_left {
+    .inspiry_stars_avg_rating {
+      .inspiry_wrapper_rating_info {
+        transform-origin: right top;
+        right: 0;
+        left: auto;
+
+        &:after {
+          right: 14px;
+          left: auto;
+        }
+      }
+
+      .inspiry_rating_percentage .inspiry_rating_line .inspiry_rating_line_inner {
+        left: auto;
+        right: 0;
+      }
+    }
+  }
+
+  .inspiry_stars_avg_rating .inspiry_rating_percentage .inspiry_rating_text {
+    padding-left: 0;
+    padding-right: 15px;
+  }
+
+  .inspiry_stars_avg_rating .inspiry_rating_percentage .inspiry_rating_sorting_label {
+    margin-right: 0;
+    margin-left: 5px;
+  }
+
+}
+
+// WP multi-sites user register default form styles
+.mu_register,
+.wp-signup-container,
+.wp-activate-container {
+  margin: 0 auto !important;
+
+  @media (min-width: 768px) {
+    width: 600px !important;
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+
+  h1,
+  h2,
+  h3,
+  strong,
+  span,
+  input[type="submit"] {
+    color: black;
+  }
+
+  .h3 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .mu_alert {
+    margin-bottom: 12px;
+  }
+
+  p {
+    line-height: 1.75;
+  }
+
+  form {
+    margin-bottom: 0;
+  }
+
+  label {
+    margin: 20px 0 0 !important;
+  }
+
+  input {
+    font-size: 16px !important;
+    padding: 10px;
+    border: 1px solid gray;
+  }
+
+  input[type="submit"] {
+    cursor: pointer;
+    background-color: lightgray;
+  }
+
+  .submit {
+    margin-top: 15px;
+  }
+}
+
+.design_classic {
+
+  .mu_register,
+  .wp-signup-container,
+  .wp-activate-container {
+    input[type="text"],
+    input[type="email"] {
+      width: calc(100% - 20px) !important;
+    }
+
+    .error {
+      margin-bottom: 0;
+    }
+
+    #submit,
+    #key {
+      width: 100%;
+    }
+  }
+}
+
+.design_modern {
+
+  .mu_register,
+  .wp-signup-container,
+  .wp-activate-container {
+    padding: 35px 0 335px;
+
+    @media (min-width: 1140px) {
+      padding-top: 180px;
+      padding-bottom: 370px;
+    }
+  }
+}
+
+.vbox-overlay,
+#swipebox-overlay {
+  z-index: 9999999999 !important;
+}
+
+// Similar Properties Filters
+.similar-properties-filters-wrapper {
+
+  a {
+    display: inline-block;
+    margin: 0 3px 5px;
+    text-transform: capitalize;
+  }
+}
+
+.design_classic {
+
+  .similar-properties-filters-wrapper {
+
+    .rh_btn {
+      padding: 12px;
+      font-size: 14px;
+    }
+  }
+
+  .similar-properties-filters-wrapper,
+  .no-similar-property-found {
+    margin: 0 -3px 15px;
+    padding: 5px 0 0;
+
+    @media(min-width: 440px) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    @media(min-width: 980px) {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    @media(min-width: 1200px) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+
+  .no-similar-property-found p{
+    margin-left: 3px;
+    margin-right: 3px;
+  }
+
+  .single-property-fullwidth .similar-properties-filters-wrapper,
+  .single-property-fullwidth .no-similar-property-found {
+    padding-left: 0;
+    padding-right: 0;
+
+    @media(min-width: 440px) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    @media(min-width: 768px) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+}
+
+.design_modern {
+  .similar-properties-filters-wrapper {
+    margin: 0 -3px 2rem;
+
+    .rh_btn {
+      padding: 1.2rem 1.2rem;
+      font-size: 1.4rem;
+    }
+  }
+
+  .no-similar-property-found {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .similar-properties-content-wrapper .no-similar-property-found {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}

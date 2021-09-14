@@ -1,0 +1,22 @@
+.rh_property__features_wrap {
+
+  h5 {
+    display: block;
+    margin-bottom: 1rem;
+    color: #808080;
+  }
+
+  .no-link-list {
+
+    .rh_property__feature {
+      padding-left: 3rem;
+      color: #808080;
+    }
+
+    &.property-policy {
+      .rh_property__feature {
+        flex-basis: 100%;
+      }
+    }
+  }
+}
